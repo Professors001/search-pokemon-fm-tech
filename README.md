@@ -1,37 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokémon Search
+
+A modern web application for searching and exploring Pokémon information, built with Next.js and GraphQL.
+
+![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?logo=tailwindcss)
+![Apollo](https://img.shields.io/badge/Apollo-GraphQL-311C87?logo=apollographql)
+
+## Features
+
+- **Search Pokémon** by name with real-time results
+- **Detailed Pokémon cards** showing types, stats, abilities, and classification
+- **Evolution chains** with clickable navigation between evolutions
+- **Shareable URLs** - search state persists in the URL for easy sharing
+- **Dark mode support** for comfortable viewing
+- **Responsive design** optimized for all screen sizes
+- **Type-safe** with TypeScript and GraphQL codegen
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) with App Router
+- **Frontend**: React 19, TailwindCSS 4
+- **Data Fetching**: Apollo Client with GraphQL
+- **Icons**: Lucide React
+- **Language**: TypeScript 5
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- [Bun](https://bun.sh/) (recommended) or Node.js 20.9+
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone <repository-url>
+cd search-pokemon-fm-tech
+
+# Install dependencies
+bun install
+
+# Or with npm/npm
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run dev
+# or
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+### Building for Production
+
+```bash
+bun run build
+# or
+npm run build
+```
+
+## Usage
+
+1. Enter a Pokémon name in the search box (e.g., "Pikachu", "Charizard", "Bulbasaur")
+2. View detailed information including:
+   - Pokémon image and classification
+   - Types with color-coded badges
+   - Base stats (HP, Attack, Defense, etc.)
+   - Abilities and description
+   - Evolution chain with clickable links
+3. Click on any evolution to navigate to that Pokémon
+4. Share your search by copying the URL
+
+## Project Structure
+
+```
+search-pokemon-fm-tech/
+├── app/
+│   ├── page.tsx           # Main search page
+│   ├── layout.tsx         # Root layout with providers
+│   ├── providers.tsx      # Apollo Client provider
+│   └── globals.css        # Global styles
+├── components/
+│   ├── SearchInput.tsx    # Search input component
+│   ├── PokemonCard.tsx    # Pokemon detail card
+│   ├── PokemonSkeleton.tsx # Loading skeleton
+│   ├── EvolutionLink.tsx  # Evolution navigation
+│   └── NotFound.tsx       # Empty state component
+├── lib/
+│   └── graphql/           # GraphQL queries and types
+├── public/                # Static assets
+└── next.config.ts         # Next.js configuration
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# search-pokemon-fm-tech
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
